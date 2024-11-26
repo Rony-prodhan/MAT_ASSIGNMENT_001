@@ -1,0 +1,59 @@
+# Read the CSV file
+data <- read.csv("D:/Desktop/Semester5/Courses/Probability and Statistics MAT 4509/Rony_Cleaned.csv", 
+                 stringsAsFactors = FALSE)
+#For small narrowbodies
+# Extract row 8 and columns 3 to 12 (note: row 8 is the 7th index in R)
+selected_data <- data[17, 3:12]
+
+# Convert the selected data to a numeric vector (it could be in character format)
+# Ensure the data is numeric
+salaries <- na.omit(salaries)  # Remove any NA values
+labels <- paste("Category", 1:length(salaries))  # Generate labels for the slices/bars
+
+# Pie Chart
+pie(salaries, labels = labels, 
+    main = "Maintenance (Row 17, Col 3-12)", 
+    col = rainbow(length(salaries)))
+
+# Add a legend
+legend("topright", labels, fill = rainbow(length(salaries)), title = "Categories")
+
+# Bar Chart
+barplot(salaries, names.arg = labels, 
+        main = "Maintenance (Row 17, Col 3-12)", 
+        col = "skyblue", 
+        xlab = "Categories", 
+        ylab = "Salaries", 
+        border = "blue")
+
+
+#for load factor
+# Read the CSV file
+data <- read.csv("D:/Desktop/Semester5/Courses/Probability and Statistics MAT 4509/Rony_Cleaned.csv", 
+                 stringsAsFactors = FALSE)
+#For small narrowbodies
+# Extract row 8 and columns 3 to 12 (note: row 8 is the 7th index in R)
+selected_data <- data[35, 3:12]
+
+# Convert the selected data to a numeric vector (it could be in character format)
+# Ensure the data is numeric
+salaries <- na.omit(salaries)  # Remove any NA values
+labels <- paste("Category", 1:length(salaries))  # Generate labels for the slices/bars
+
+# Pie Chart
+pie(salaries, labels = labels, 
+    main = "Load factor (Row 17, Col 3-12)", 
+    col = rainbow(length(salaries)))
+
+# Add a legend
+legend("topright", labels, fill = rainbow(length(salaries)), title = "Categories")
+
+# Bar Chart
+barplot(salaries, names.arg = labels, 
+        main = "Load factor (Row 17, Col 3-12)", 
+        col = "skyblue", 
+        xlab = "Categories", 
+        ylab = "Salaries", 
+        border = "blue")
+
+
