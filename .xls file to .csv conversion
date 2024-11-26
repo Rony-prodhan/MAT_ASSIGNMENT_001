@@ -1,0 +1,24 @@
+# Install the readxl package if you haven't already
+# install.packages("readxl")
+getwd()
+setwd("D:/Desktop/Semester5/Courses/Probability and Statistics MAT 4509")
+# Load the readxl package
+library(readxl)
+
+# Define the path to the .xls file
+xls_file_path <- "United Airlines Aircraft Operating Statistics- Cost Per Block Hour (Unadjusted).xls"
+
+# Read the .xls file
+data <- read_excel(xls_file_path)
+
+# Check the first few rows of the data
+head(data)
+
+# Define the path where to save the .csv file
+csv_file_path <- "Rony.csv"
+
+# Write the data to a .csv file
+write.csv(data, csv_file_path, row.names = FALSE)
+
+# Print success message
+cat("The file has been successfully converted to .csv and saved at:", csv_file_path)
