@@ -1,0 +1,21 @@
+# Read the CSV file into R
+data <- read.csv("D:/Desktop/Semester5/Courses/Probability and Statistics MAT 4509/Rony.csv", stringsAsFactors = FALSE)
+
+# Check the first few rows to ensure it loaded correctly
+head(data)
+
+# Remove dollar signs from all columns (assuming they are character columns)
+data_cleaned <- data
+data_cleaned[] <- lapply(data_cleaned, function(x) gsub("\\$", "", x))
+
+# Convert columns that should be numeric to numeric (after removing the dollar sign)
+data_cleaned[] <- lapply(data_cleaned, function(x) as.numeric(x))
+
+# Check the cleaned data
+head(data_cleaned)
+
+# Save the cleaned data to a new CSV file
+write.csv(data_cleaned, "D:/Desktop/Semester5/Courses/Probability and Statistics MAT 4509/Rony_Cleaned.csv", row.names = FALSE)
+
+# Print success message
+cat("Dollar signs have been removed and the cleaned file is saved at the specified location.")
