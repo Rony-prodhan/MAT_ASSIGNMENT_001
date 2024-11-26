@@ -1,0 +1,53 @@
+#small narrowbodies
+# Read the CSV file
+data <- read.csv("D:/Desktop/Semester5/Courses/Probability and Statistics MAT 4509/Rony_Cleaned.csv", 
+                 stringsAsFactors = FALSE)
+#For small narrowbodies
+# Extract row 8 and columns 3 to 12 (note: row 8 is the 7th index in R)
+selected_data <- data[7, 3:12]
+
+# Convert the selected data to a numeric vector (it could be in character format)
+salaries <- as.numeric(selected_data)
+
+# Mean
+mean_salaries <- mean(salaries)
+
+# Median
+median_salaries <- median(salaries)
+
+# Mode (custom function to compute mode)
+get_mode <- function(x) {
+  uniq_x <- unique(x)
+  uniq_x[which.max(tabulate(match(x, uniq_x)))]
+}
+mode_salaries <- get_mode(salaries)
+
+# Standard Deviation
+sd_salaries <- sd(salaries)
+
+# Variance
+var_salaries <- var(salaries)
+
+# Quartiles
+quartiles <- quantile(salaries)
+
+# 9th Decile (90th Percentile)
+decile_9 <- quantile(salaries, probs = 0.9)
+
+# 10th Percentile
+percentile_10 <- quantile(salaries, probs = 0.1)
+
+# Range
+range_salaries <- range(salaries)
+salary_range <- diff(range_salaries)
+
+# Print Results
+cat("Mean:", mean_salaries, "\n")
+cat("Median:", median_salaries, "\n")
+cat("Mode:", mode_salaries, "\n")
+cat("Standard Deviation:", sd_salaries, "\n")
+cat("Variance:", var_salaries, "\n")
+cat("Quartiles:\n", quartiles, "\n")
+cat("9th Decile (90th Percentile):", decile_9, "\n")
+cat("10th Percentile:", percentile_10, "\n")
+cat("Range:", salary_range, "\n")
