@@ -1,0 +1,67 @@
+#for the purchased goods
+# Read the CSV file
+data <- read.csv("D:/Desktop/Semester5/Courses/Probability and Statistics MAT 4509/Rony_Cleaned.csv", 
+                 stringsAsFactors = FALSE)
+
+# For small narrowbodies (Row 12, Columns 3-12)
+selected_data <- data[12, 3:12]
+
+# Convert the selected data to numeric (remove NAs)
+salaries <- as.numeric(selected_data)
+salaries <- na.omit(salaries)  # Remove any NA values
+
+# Develop the Box Plot
+boxplot(salaries, 
+        main = "Box Plot purchased goods (Row 12, Columns 3-12)", 
+        ylab = "price", 
+        col = "lightblue", 
+        border = "darkblue", 
+        notch = TRUE)
+
+# Add a grid for better visualization
+grid()
+
+# for the aircraft ownership
+# Read the CSV file
+data <- read.csv("D:/Desktop/Semester5/Courses/Probability and Statistics MAT 4509/Rony_Cleaned.csv", 
+                 stringsAsFactors = FALSE)
+
+# For small narrowbodies (Row 12, Columns 3-12)
+selected_data <- data[24, 3:12]
+
+# Convert the selected data to numeric (remove NAs)
+salaries <- as.numeric(selected_data)
+salaries <- na.omit(salaries)  # Remove any NA values
+
+# Develop the Box Plot
+boxplot(salaries, 
+        main = "Box Plot aircraft owership (Row 12, Columns 3-12)", 
+        ylab = "price", 
+        col = "lightblue", 
+        border = "darkblue", 
+        notch = TRUE)
+
+# Add a grid for better visualization
+grid()
+# Daily utilization
+# Read the CSV file
+data <- read.csv("D:/Desktop/Semester5/Courses/Probability and Statistics MAT 4509/Rony_Cleaned.csv", 
+                 stringsAsFactors = FALSE)
+
+# For small narrowbodies (Row 12, Columns 3-12)
+selected_data <- data[38, 3:12]
+
+# Convert the selected data to numeric (remove NAs)
+salaries <- as.numeric(selected_data)
+salaries <- na.omit(salaries)  # Remove any NA values
+
+# Develop the Box Plot
+boxplot(salaries, 
+        main = "Box Plot daily utilization (Row 12, Columns 3-12)", 
+        ylab = "price", 
+        col = "lightblue", 
+        border = "darkblue", 
+        notch = TRUE)
+
+# Add a grid for better visualization
+grid()
